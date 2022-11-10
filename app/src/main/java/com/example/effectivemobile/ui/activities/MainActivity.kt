@@ -337,8 +337,4 @@ class MainActivity : AppCompatActivity() {
             3300
         )
     }
-
-    override fun onStart() {
-        super.onStart()
-    }
 }
