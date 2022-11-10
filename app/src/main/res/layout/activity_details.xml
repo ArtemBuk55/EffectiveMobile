@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tvProductDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/mark_pro"
+        android:text="@string/product_details"
+        android:textColor="@color/titles_text_color"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/ic_rectangle_dark_blue"
+        app:layout_constraintBottom_toBottomOf="@id/tvProductDetails"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvProductDetails" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintBottom_toBottomOf="@id/imageBack"
+        app:layout_constraintEnd_toEndOf="@id/imageBack"
+        app:layout_constraintStart_toStartOf="@id/imageBack"
+        app:layout_constraintTop_toTopOf="@id/imageBack" />
+
+    <ImageView
+        android:id="@+id/imageCart"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/ic_rectangle_orange"
+        app:layout_constraintBottom_toBottomOf="@id/tvProductDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvProductDetails" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_bag"
+        app:layout_constraintBottom_toBottomOf="@id/imageCart"
+        app:layout_constraintEnd_toEndOf="@id/imageCart"
+        app:layout_constraintStart_toStartOf="@id/imageCart"
+        app:layout_constraintTop_toTopOf="@id/imageCart" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProductPhotos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toTopOf="@id/detailsContainer"
+        app:layout_constraintTop_toBottomOf="@id/imageBack" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/detailsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvProductPhotos">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/mark_pro"
+                android:textColor="@color/titles_text_color"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageFavorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/ic_rectangle_dark_blue"
+                app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvTitle" />
+
+            <ImageView
+                android:id="@+id/imageHeart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_empty_white_heart"
+                app:layout_constraintBottom_toBottomOf="@id/imageFavorite"
+                app:layout_constraintEnd_toEndOf="@id/imageFavorite"
+                app:layout_constraintStart_toStartOf="@id/imageFavorite"
+                app:layout_constraintTop_toTopOf="@id/imageFavorite" />
+
+            <LinearLayout
+                android:id="@+id/starsContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+            <TextView
+                android:id="@+id/tvShop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/mark_pro"
+                android:gravity="center"
+                android:text="@string/shop"
+                android:textColor="@color/titles_text_color"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/starsContainer"
+                app:layout_constraintTop_toBottomOf="@id/starsContainer" />
+
+            <TextView
+                android:id="@+id/tvDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/mark_pro"
+                android:gravity="center"
+                android:text="@string/details"
+                android:textColor="@color/titles_text_color"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/tvFeatures"
+                app:layout_constraintStart_toStartOf="@id/tvShop"
+                app:layout_constraintTop_toBottomOf="@id/starsContainer" />
+
+            <TextView
+                android:id="@+id/tvFeatures"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/mark_pro"
+                android:gravity="center"
+                android:text="@string/features"
+                android:textColor="@color/titles_text_color"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/imageFavorite"
+                app:layout_constraintTop_toBottomOf="@id/starsContainer" />
+
+            <View
+                android:id="@+id/lineShop"
+                android:layout_width="90dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/view_all_color"
+                app:layout_constraintEnd_toEndOf="@id/tvShop"
+                app:layout_constraintStart_toStartOf="@id/tvShop"
+                app:layout_constraintTop_toBottomOf="@id/tvShop" />
+
+            <View
+                android:id="@+id/lineDetails"
+                android:layout_width="90dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/view_all_color"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@id/tvDetails"
+                app:layout_constraintStart_toStartOf="@id/tvDetails"
+                app:layout_constraintTop_toBottomOf="@id/tvDetails" />
+
+            <View
+                android:id="@+id/lineFeatures"
+                android:layout_width="90dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/view_all_color"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@id/tvFeatures"
+                app:layout_constraintStart_toStartOf="@id/tvFeatures"
+                app:layout_constraintTop_toBottomOf="@id/tvFeatures" />
+
+            <ImageView
+                android:id="@+id/imageProcessor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="35dp"
+                android:src="@drawable/ic_processor"
+                app:layout_constraintStart_toStartOf="@id/lineShop"
+                app:layout_constraintTop_toBottomOf="@id/lineShop" />
+
+            <ImageView
+                android:id="@+id/imageCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:src="@drawable/ic_camera"
+                app:layout_constraintBottom_toBottomOf="@id/imageProcessor"
+                app:layout_constraintEnd_toStartOf="@id/imageRam"
+                app:layout_constraintStart_toEndOf="@id/imageProcessor"
+                app:layout_constraintTop_toTopOf="@id/imageProcessor" />
+
+            <ImageView
+                android:id="@+id/imageRam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_ram"
+                app:layout_constraintBottom_toBottomOf="@id/imageProcessor"
+                app:layout_constraintEnd_toStartOf="@id/imageMemory"
+                app:layout_constraintStart_toEndOf="@id/imageCamera"
+                app:layout_constraintTop_toTopOf="@id/imageProcessor" />
+
+            <ImageView
+                android:id="@+id/imageMemory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:src="@drawable/ic_memory"
+                app:layout_constraintBottom_toBottomOf="@id/imageProcessor"
+                app:layout_constraintEnd_toEndOf="@id/tvFeatures"
+                app:layout_constraintTop_toTopOf="@id/imageProcessor" />
+
+            <TextView
+                android:id="@+id/tvCPU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/mark_pro"
+                android:textColor="@color/details_color"
+                app:layout_constraintEnd_toEndOf="@id/imageProcessor"
+                app:layout_constraintStart_toStartOf="@id/imageProcessor"
+                app:layout_constraintTop_toBottomOf="@id/imageProcessor"
+                tools:text="Exynos 990" />
+
+            <TextView
+                android:id="@+id/tvCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/mark_pro"
+                android:textColor="@color/details_color"
+                app:layout_constraintEnd_toEndOf="@id/imageCamera"
+                app:layout_constraintStart_toStartOf="@id/imageCamera"
+                app:layout_constraintTop_toBottomOf="@id/imageProcessor"
+                tools:text="Exynos 990" />
+
+            <TextView
+                android:id="@+id/tvRam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/mark_pro"
+                android:textColor="@color/details_color"
+                app:layout_constraintEnd_toEndOf="@id/imageRam"
+                app:layout_constraintStart_toStartOf="@id/imageRam"
+                app:layout_constraintTop_toBottomOf="@id/imageProcessor"
+                tools:text="Exynos 990" />
+
+            <TextView
+                android:id="@+id/tvMemory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/mark_pro"
+                android:textColor="@color/details_color"
+                app:layout_constraintEnd_toEndOf="@id/imageMemory"
+                app:layout_constraintStart_toStartOf="@id/imageMemory"
+                app:layout_constraintTop_toBottomOf="@id/imageProcessor"
+                tools:text="Exynos 990" />
+
+            <TextView
+                android:id="@+id/tvColorAndCapacity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/mark_pro"
+                android:text="@string/color_and_capacity"
+                android:textColor="@color/titles_text_color"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/starsContainer"
+                app:layout_constraintTop_toBottomOf="@id/tvCPU" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvColors"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintEnd_toStartOf="@id/rvMemory"
+                app:layout_constraintStart_toStartOf="@id/tvColorAndCapacity"
+                app:layout_constraintTop_toBottomOf="@id/tvColorAndCapacity"
+                app:layout_constraintBottom_toTopOf="@id/btnAddToCart"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMemory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/rvColors"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/rvColors"
+                app:layout_constraintTop_toTopOf="@id/rvColors" />
+
+
+            <Button
+                android:id="@+id/btnAddToCart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="25dp"
+                android:background="@color/view_all_color"
+                android:fontFamily="@font/mark_pro"
+                android:gravity="start|center_vertical"
+                android:paddingStart="40dp"
+                android:text="@string/add_to_cart"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/mark_pro"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:translationZ="6dp"
+                app:layout_constraintBottom_toBottomOf="@id/btnAddToCart"
+                app:layout_constraintEnd_toEndOf="@id/btnAddToCart"
+                app:layout_constraintTop_toTopOf="@id/btnAddToCart" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

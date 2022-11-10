@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="70dp"
+    android:layout_marginEnd="10dp"
+    android:layout_height="30dp">
+
+    <View
+        android:id="@+id/memoryContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/view_all_color" />
+
+    <TextView
+        android:id="@+id/tvMemory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:fontFamily="@font/mark_pro"
+        android:text="128 GB"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+</FrameLayout>
