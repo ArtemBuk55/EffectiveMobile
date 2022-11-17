@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/first_screen_background"
     android:paddingTop="10dp"
-    tools:context=".ui.activities.MainActivity">
+    tools:context=".ui.main.MainActivity">
 
     <ImageView
         android:id="@+id/imageGeo"
@@ -53,73 +53,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/tvGeo" />
 
-    <TextView
-        android:id="@+id/tvSelectCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="13dp"
-        android:fontFamily="@font/mark_pro"
-        android:text="@string/select_category"
-        android:textColor="@color/titles_text_color"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageGeo" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/mark_pro"
-        android:text="@string/view_all"
-        android:textColor="@color/view_all_color"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@id/tvSelectCategory"
-        app:layout_constraintEnd_toEndOf="@id/imageFilter"
-        app:layout_constraintTop_toTopOf="@id/tvSelectCategory" />
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvCategories"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/tvSelectCategory" />
-
-    <SearchView
-        android:id="@+id/search"
-        android:layout_width="290dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="35dp"
-        android:background="@drawable/background_search"
-        android:iconifiedByDefault="false"
-        android:queryHint="@string/search"
-        android:searchIcon="@drawable/ic_search"
-        app:layout_constraintStart_toStartOf="@id/tvSelectCategory"
-        app:layout_constraintTop_toBottomOf="@id/rvCategories"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@id/coordinator"/>
-
-    <ImageView
-        android:id="@+id/imageQRCircle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_qr_circle"
-        app:layout_constraintBottom_toBottomOf="@id/search"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/search" />
-
-    <ImageView
-        android:id="@+id/imageQRCenter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_qr_center"
-        app:layout_constraintBottom_toBottomOf="@id/imageQRCircle"
-        app:layout_constraintEnd_toEndOf="@id/imageQRCircle"
-        app:layout_constraintStart_toStartOf="@id/imageQRCircle"
-        app:layout_constraintTop_toTopOf="@id/imageQRCircle" />
-
+        android:layout_height="0dp"
+        android:paddingTop="20dp"
+        android:clipToPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvGeo"
+        tools:layout_editor_absoluteX="10dp" />
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinator"
         android:layout_width="0dp"
@@ -127,87 +69,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search"
+        app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible">
-
-        <ScrollView
-            android:id="@+id/scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toTopOf="@id/coordinator"
-            app:layout_constraintTop_toBottomOf="@id/search">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tvHotSales"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="22dp"
-                    android:layout_marginTop="13dp"
-                    android:fontFamily="@font/mark_pro"
-                    android:text="@string/hot_sales"
-                    android:textColor="@color/titles_text_color"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/mark_pro"
-                    android:text="@string/see_more"
-                    android:textColor="@color/view_all_color"
-                    android:textSize="15sp"
-                    app:layout_constraintBottom_toBottomOf="@id/tvHotSales"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvHotSales" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvHotSales"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintTop_toBottomOf="@id/tvHotSales" />
-
-                <TextView
-                    android:id="@+id/tvBestSeller"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="22dp"
-                    android:layout_marginTop="13dp"
-                    android:fontFamily="@font/mark_pro"
-                    android:text="@string/best_seller"
-                    android:textColor="@color/titles_text_color"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/rvHotSales" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/mark_pro"
-                    android:text="@string/see_more"
-                    android:textColor="@color/view_all_color"
-                    android:textSize="15sp"
-                    app:layout_constraintBottom_toBottomOf="@id/tvBestSeller"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvBestSeller" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvBestSeller"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:visibility="visible"
-                    app:layout_constraintTop_toBottomOf="@id/tvBestSeller" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </ScrollView>
-
         <androidx.cardview.widget.CardView
             android:id="@+id/optionsFilterContainer"
             android:layout_width="match_parent"
@@ -330,4 +193,5 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
