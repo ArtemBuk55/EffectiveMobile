@@ -328,6 +328,7 @@
                 android:background="@color/view_all_color"
                 android:fontFamily="@font/mark_pro"
                 android:gravity="start|center_vertical"
+                android:textColor="@color/white"
                 android:paddingStart="40dp"
                 android:text="@string/add_to_cart"
                 android:textAllCaps="false"

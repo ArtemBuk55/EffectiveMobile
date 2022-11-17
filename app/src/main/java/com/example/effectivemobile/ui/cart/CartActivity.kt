@@ -29,6 +29,7 @@ class CartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCartBinding.inflate(layoutInflater).also { setContentView(it.root) }
+        window.navigationBarColor = resources.getColor(R.color.titles_text_color)
         cartViewModel = ViewModelProvider(this)[CartViewModel::class.java]
         startObservers()
         cartViewModel.launchSearch()
