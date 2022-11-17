@@ -38,24 +38,44 @@ class DetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        detailsViewModel = ViewModelProvider(this)[DetailsViewModel::class.java]
         binding = ActivityDetailsBinding.inflate(layoutInflater).also { setContentView(it.root) }
+        initViews()
+        detailsViewModel = ViewModelProvider(this)[DetailsViewModel::class.java]
         startObservers()
         detailsViewModel.launchSearch()
         initProductPhotoAdapter()
     }
 
+    private fun initViews() = binding.apply {
+        btnAddToCart.cornerRadius(20f)
+        detailsContainer.cornerRadius(70f, false)
+        imageBack.setOnClickListener { finish() }
+        imageCart.setOnClickListener {
+            openCartActivity()
+        }
+        imageFavorite.setOnClickListener {
+            if (productDetails.isFavorites) {
+                imageHeart.setImageResource(R.drawable.ic_empty_white_heart)
+                productDetails.isFavorites = false
+                //delete from favorite
+            } else {
+                imageHeart.setImageResource(R.drawable.ic_white_heart)
+                productDetails.isFavorites = true
+                //add to favorite
+            }
+        }
+        initCategories()
+    }
+
     private fun startObservers() {
         detailsViewModel.details.observe(this) {
             productDetails = it
-            initViews()
+            setViewsInfo()
             productPhotoAdapter.addPhotoUrls(productDetails.images)
-            Log.d("MyTag", "details ${productDetails}")
-            Log.d("MyTag", "details ${productDetails?.capacity}")
         }
     }
 
-    private fun initViews() = binding.apply {
+    private fun setViewsInfo() = binding.apply {
         tvTitle.text = productDetails.title
         tvCPU.text = productDetails.CPU
         tvCamera.text = productDetails.camera
@@ -65,14 +85,7 @@ class DetailsActivity : AppCompatActivity() {
             R.string.dollars_with_point,
             productDetails.price.toString()
         )
-        btnAddToCart.cornerRadius(20f)
-        detailsContainer.cornerRadius(70f, false)
-        imageBack.setOnClickListener { finish() }
-        imageCart.setOnClickListener {
-            openCartActivity()
-        }
         initIsFavourite()
-        initCategories()
         addStars()
         addColors()
         addMemory()
@@ -136,17 +149,6 @@ class DetailsActivity : AppCompatActivity() {
     private fun initIsFavourite() = binding.apply {
         if (productDetails.isFavorites) {
             imageHeart.setImageResource(R.drawable.ic_white_heart)
-        }
-        imageFavorite.setOnClickListener {
-            if (productDetails.isFavorites) {
-                imageHeart.setImageResource(R.drawable.ic_empty_white_heart)
-                productDetails.isFavorites = false
-                //delete from favorite
-            } else {
-                imageHeart.setImageResource(R.drawable.ic_white_heart)
-                productDetails.isFavorites = true
-                //add to favorite
-            }
         }
     }
 

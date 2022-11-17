@@ -30,6 +30,14 @@ class CartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCartBinding.inflate(layoutInflater).also { setContentView(it.root) }
         window.navigationBarColor = resources.getColor(R.color.titles_text_color)
+        binding.imageBack.setOnClickListener { finish() }
+        binding.btnCheckout.run {
+            cornerRadius(20f)
+            setOnClickListener {
+                //checkout
+            }
+        }
+        binding.cartContainer.cornerRadius(75f, false)
         cartViewModel = ViewModelProvider(this)[CartViewModel::class.java]
         startObservers()
         cartViewModel.launchSearch()
@@ -50,14 +58,6 @@ class CartActivity : AppCompatActivity() {
             cartResponse.total.toString()
         )
         tvDeliveryPrice.text = cartResponse.delivery
-        imageBack.setOnClickListener { finish() }
-        btnCheckout.run {
-            cornerRadius(20f)
-            setOnClickListener {
-                //checkout
-            }
-        }
-        cartContainer.cornerRadius(75f, false)
     }
 
     private fun initAdapter() = binding.apply {
