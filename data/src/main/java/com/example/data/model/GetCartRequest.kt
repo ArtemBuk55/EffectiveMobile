@@ -1,7 +1,7 @@
-package com.example.effectivemobile.data.model
+package com.example.data.model
 
-import com.example.effectivemobile.domain.cart.Basket
-import com.example.effectivemobile.domain.cart.Cart
+import com.example.domain.cart.Basket
+import com.example.domain.cart.Cart
 import com.google.gson.annotations.SerializedName
 
 data class GetCartRequest(

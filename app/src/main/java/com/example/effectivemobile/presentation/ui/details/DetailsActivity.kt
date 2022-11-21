@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.effectivemobile.R
 import com.example.effectivemobile.databinding.ActivityDetailsBinding
-import com.example.effectivemobile.domain.details.Details
+import com.example.domain.details.Details
 import com.example.effectivemobile.presentation.ui.cart.CartActivity
 import com.example.effectivemobile.presentation.ui.details.adapters.ColorAdapter
 import com.example.effectivemobile.presentation.ui.details.adapters.MemoryAdapter
@@ -28,7 +28,7 @@ class DetailsActivity : AppCompatActivity() {
     private val TAG = "DetailsActivity"
 
     private lateinit var binding: ActivityDetailsBinding
-    private lateinit var productDetails: Details
+    private lateinit var productDetails: com.example.domain.details.Details
     private val productPhotoAdapter = ProductPhotoAdapter()
     private val colorAdapter = ColorAdapter()
     private val memoryAdapter = MemoryAdapter()

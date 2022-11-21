@@ -1,8 +1,8 @@
-package com.example.effectivemobile.data
+package com.example.data
 
-import com.example.effectivemobile.data.model.GetCartRequest
-import com.example.effectivemobile.data.model.GetDetailsRequest
-import com.example.effectivemobile.data.model.GetSalesRequest
+import com.example.data.model.GetCartRequest
+import com.example.data.model.GetDetailsRequest
+import com.example.data.model.GetSalesRequest
 import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
 

@@ -1,4 +1,4 @@
-package com.example.effectivemobile.domain.sales
+package com.example.domain.sales
 
 data class BestSeller(
     val id: Int,

@@ -3,20 +3,20 @@ package com.example.effectivemobile.presentation.ui.cart.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.effectivemobile.data.model.GetCartRequest
-import com.example.effectivemobile.data.ServerRepositoryApi
-import com.example.effectivemobile.data.ServerRepositoryImpl
-import com.example.effectivemobile.domain.cart.Cart
+import com.example.data.ServerRepositoryApi
+import com.example.data.ServerRepositoryImpl
+import com.example.domain.cart.Cart
 import com.example.effectivemobile.domain.cart.GetCartInteractor
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class CartViewModel : ViewModel() {
 
-    private val repository: ServerRepositoryApi = ServerRepositoryImpl()
+    private val repository: com.example.data.ServerRepositoryApi =
+        com.example.data.ServerRepositoryImpl()
     private val getCartInteractor: GetCartInteractor = GetCartInteractor(repository)
 
-    val cart: MutableLiveData<Cart> = MutableLiveData()
+    val cart: MutableLiveData<com.example.domain.cart.Cart> = MutableLiveData()
 
     fun launchSearch() {
         viewModelScope.launch(Dispatchers.IO) {

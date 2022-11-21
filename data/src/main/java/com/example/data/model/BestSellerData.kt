@@ -1,6 +1,6 @@
-package com.example.effectivemobile.data.model;
+package com.example.data.model;
 
-import com.example.effectivemobile.domain.sales.BestSeller
+import com.example.domain.sales.BestSeller
 import com.google.gson.annotations.SerializedName
 
 data class BestSellerData(

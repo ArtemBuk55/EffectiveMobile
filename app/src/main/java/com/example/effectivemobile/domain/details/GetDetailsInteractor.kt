@@ -1,11 +1,11 @@
 package com.example.effectivemobile.domain.details
 
-import com.example.effectivemobile.data.ServerRepositoryApi
-import com.example.effectivemobile.data.model.toDetails
+import com.example.domain.details.Details
+import com.example.domain.ServerApi
 
-class GetDetailsInteractor(private val repositoryApi: ServerRepositoryApi) {
+class GetDetailsInteractor(private val serverApi: ServerApi) {
 
     suspend fun execute(): Details {
-        return repositoryApi.getDetailsData().toDetails()
+        return serverApi.getDetails()
     }
 }

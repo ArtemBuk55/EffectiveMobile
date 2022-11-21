@@ -1,11 +1,11 @@
 package com.example.effectivemobile.domain.cart
 
-import com.example.effectivemobile.data.ServerRepositoryApi
-import com.example.effectivemobile.data.model.toCart
+import com.example.domain.ServerApi
+import com.example.domain.cart.Cart
 
-class GetCartInteractor(private val repositoryApi: ServerRepositoryApi) {
+class GetCartInteractor(private val serverApi: ServerApi) {
 
     suspend fun execute(): Cart {
-        return repositoryApi.getCartData().toCart()
+        return serverApi.getCart()
     }
 }

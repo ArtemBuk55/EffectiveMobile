@@ -1,4 +1,4 @@
-package com.example.effectivemobile.domain.cart
+package com.example.domain.cart
 
 data class Cart(
     val basketList: List<Basket> = emptyList(),

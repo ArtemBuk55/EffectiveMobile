@@ -1,4 +1,4 @@
-package com.example.effectivemobile.domain.details
+package com.example.domain.details
 
 data class Details(
     val cpu: String,

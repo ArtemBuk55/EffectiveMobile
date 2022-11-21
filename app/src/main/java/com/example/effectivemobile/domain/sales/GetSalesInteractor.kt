@@ -1,11 +1,11 @@
 package com.example.effectivemobile.domain.sales
 
-import com.example.effectivemobile.data.ServerRepositoryApi
-import com.example.effectivemobile.data.model.toSales
+import com.example.domain.sales.Sales
+import com.example.domain.ServerApi
 
-class GetSalesInteractor(private val repositoryApi: ServerRepositoryApi) {
+class GetSalesInteractor(private val serverApi: ServerApi) {
 
     suspend fun execute(): Sales {
-        return repositoryApi.getSalesData().toSales()
+        return serverApi.getSales()
     }
 }

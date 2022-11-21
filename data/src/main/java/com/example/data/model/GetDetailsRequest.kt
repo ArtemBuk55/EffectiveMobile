@@ -1,6 +1,6 @@
-package com.example.effectivemobile.data.model
+package com.example.data.model
 
-import com.example.effectivemobile.domain.details.Details
+import com.example.domain.details.Details
 import com.google.gson.annotations.SerializedName
 
 data class GetDetailsRequest(

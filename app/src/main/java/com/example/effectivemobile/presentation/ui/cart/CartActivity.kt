@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.effectivemobile.R
 import com.example.effectivemobile.databinding.ActivityCartBinding
-import com.example.effectivemobile.domain.cart.Basket
-import com.example.effectivemobile.domain.cart.Cart
+import com.example.domain.cart.Basket
+import com.example.domain.cart.Cart
 import com.example.effectivemobile.presentation.ui.cart.viewmodel.CartViewModel
 import com.example.effectivemobile.presentation.utils.cornerRadius
 
@@ -15,7 +15,7 @@ class CartActivity : AppCompatActivity() {
     private val TAG = "CartActivity"
 
     private lateinit var binding: ActivityCartBinding
-    private lateinit var cartResponse: Cart
+    private lateinit var cartResponse: com.example.domain.cart.Cart
     private lateinit var basketAdapter: BasketAdapter
     private lateinit var cartViewModel: CartViewModel
 
@@ -67,7 +67,7 @@ class CartActivity : AppCompatActivity() {
     }
 }
 
-private fun List<Basket>.toBasketItems(): List<BasketItem> {
+private fun List<com.example.domain.cart.Basket>.toBasketItems(): List<BasketItem> {
     return this.map {
         BasketItem(
             id = it.id,

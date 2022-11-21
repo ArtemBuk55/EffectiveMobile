@@ -2,9 +2,9 @@ package com.example.effectivemobile.presentation.ui.main
 
 import com.example.effectivemobile.R
 import com.example.effectivemobile.presentation.ui.base.basedelegate.AdapterElement
-import com.example.effectivemobile.domain.sales.BestSeller
-import com.example.effectivemobile.domain.sales.HotSales
-import com.example.effectivemobile.domain.sales.Sales
+import com.example.domain.sales.BestSeller
+import com.example.domain.sales.HotSales
+import com.example.domain.sales.Sales
 import com.example.effectivemobile.presentation.ui.main.adapter.elements.BestSellerElement
 import com.example.effectivemobile.presentation.ui.main.adapter.elements.CategoriesElement
 import com.example.effectivemobile.presentation.ui.main.adapter.elements.HotSalesElement
@@ -19,7 +19,7 @@ object SalesTransformator {
     private val TAG = "SalesTransformator"
 
     fun transform(
-        salesRequest: Sales
+        salesRequest: com.example.domain.sales.Sales
     ) = emptySequence<AdapterElement>()
         .plus(getCategories())
         .plus(getSearch())
@@ -44,20 +44,20 @@ object SalesTransformator {
         )
     }
 
-    private fun getBestSaler(bestSeller: List<BestSeller>): BestSellerElement {
+    private fun getBestSaler(bestSeller: List<com.example.domain.sales.BestSeller>): BestSellerElement {
         return BestSellerElement(
             bestSeller.toBestSellerItems()
         )
     }
 
-    private fun getHotSales(homeSeller: List<HotSales>): HotSalesElement {
+    private fun getHotSales(homeSeller: List<com.example.domain.sales.HotSales>): HotSalesElement {
         return HotSalesElement(
             homeSeller.toHotSaleItem()
         )
     }
 }
 
-private fun List<BestSeller>.toBestSellerItems(): List<BestSellerItem> {
+private fun List<com.example.domain.sales.BestSeller>.toBestSellerItems(): List<BestSellerItem> {
     return this.map {
         BestSellerItem(
             id = it.id,
@@ -70,7 +70,7 @@ private fun List<BestSeller>.toBestSellerItems(): List<BestSellerItem> {
     }
 }
 
-private fun List<HotSales>.toHotSaleItem(): List<HotSaleItem> {
+private fun List<com.example.domain.sales.HotSales>.toHotSaleItem(): List<HotSaleItem> {
     return this.map {
         HotSaleItem(
             id = it.id,

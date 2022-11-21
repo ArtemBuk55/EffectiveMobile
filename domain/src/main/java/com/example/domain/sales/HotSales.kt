@@ -1,4 +1,4 @@
-package com.example.effectivemobile.domain.sales
+package com.example.domain.sales
 
 data class HotSales(
     val id: Int,
