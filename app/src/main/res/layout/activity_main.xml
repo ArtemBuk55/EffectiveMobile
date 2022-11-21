@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/first_screen_background"
     android:paddingTop="10dp"
-    tools:context=".ui.main.MainActivity">
+    tools:context=".presentation.ui.main.MainActivity">
 
     <ImageView
         android:id="@+id/imageGeo"
